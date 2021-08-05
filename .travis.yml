@@ -1,0 +1,25 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email:
+    recipients:
+      - aguilop.oscar@gmail.com
+    on_success: always
+    on_failure: always
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: df1d498f-6a2c-4c65-aa4d-86066c7aa634
+  app: platzi-store-backend-oscar
+  on:
+    repo: OscarAguilarL/platzi-store-backend
